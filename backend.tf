@@ -7,6 +7,6 @@ terraform {
     region            = "eu-central-1"
     profile           = "default"
     key               = "terraform-state-file/statefile.tfstate"
-    bucket            = "terraform-state-bucket-andreichenko-0009"
+    bucket            = "terraform-state-bucket"
   }
 }
