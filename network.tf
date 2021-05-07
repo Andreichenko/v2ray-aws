@@ -89,7 +89,7 @@ resource "aws_route_table" "public-routes" {
 
 #Owerwrite default route table of VPC common with our route table entries
 resource "aws_main_route_table_association" "set-common-worker-rt-associate" {
-  route_table_id                = aws_route_table.public-routes.id
-  vpc_id                        = aws_vpc.vpc-central-1.id
-  provider                      = aws.region-common
+  route_table_id = aws_route_table.public-routes.id
+  vpc_id         = aws_vpc.vpc-central-1.id
+  provider       = aws.region-common
 }
