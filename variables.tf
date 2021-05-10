@@ -45,4 +45,3 @@ variable "vpc_enable_dns_support" {
   type        = bool
   default     = false
 }
-

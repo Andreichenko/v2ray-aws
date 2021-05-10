@@ -3,14 +3,14 @@ data "aws_ssm_parameter" "linuxAMI-eu-central-1" {
   name     = "/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2"
 }
 
-#create key-pair for logging into EC2 in us-east-1
+#create key-pair for logging into EC2 in eu-central-1
 resource "aws_key_pair" "common-key" {
   provider   = aws.region-common
   public_key = file("~/.ssh/id_rsa.pub")
   key_name   = "v2ray"
 }
 
-#create and bootstrap ec2 in us-east-1
+#create and bootstrap ec2 in eu-central-1
 resource "aws_instance" "v2ray-server" {
   provider                    = aws.region-common
   ami                         = data.aws_ssm_parameter.linuxAMI-eu-central-1.value
