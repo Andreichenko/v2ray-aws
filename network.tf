@@ -84,7 +84,6 @@ resource "aws_route_table" "public-routes" {
   tags = {
     Name = "Common-Route-table"
   }
-
 }
 
 #Owerwrite default route table of VPC common with our route table entries
