@@ -8,6 +8,6 @@ terraform {
     region  = "eu-central-1"
     profile = "default"
     key     = "terraform-state-file/statefile.tfstate"
-    bucket  = "terraform-state-bucket"
+    bucket  = "terraform-state-cname-bucket"
   }
 }
