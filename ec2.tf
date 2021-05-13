@@ -31,6 +31,7 @@ resource "aws_instance" "v2ray-server" {
     Name       = "v2ray-server"
     Owner      = "Aleksandr Andreichenko"
     Environmet = "Production"
+    Type       = "t2-micro"
     Region     = "eu-central-1"
   }
 }
