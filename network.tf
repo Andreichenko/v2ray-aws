@@ -31,6 +31,7 @@ resource "aws_subnet" "subnet-1a" {
     Owner      = "Aleksandr Andreichenko"
     Environmet = "Production"
     Region     = "eu-central-1"
+    Zone = "1a"
   }
 }
 
@@ -45,6 +46,7 @@ resource "aws_subnet" "subnet-1b" {
     Owner      = "Aleksandr Andreichenko"
     Environmet = "Production"
     Region     = "eu-central-1"
+    Zone = "1b"
   }
 }
 
@@ -59,6 +61,7 @@ resource "aws_subnet" "subnet-1c" {
     Owner      = "Aleksandr Andreichenko"
     Environmet = "Production"
     Region     = "eu-central-1"
+    Zone = "1c"
   }
 }
 
