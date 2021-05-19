@@ -49,7 +49,7 @@ resource "aws_subnet" "subnet-1b" {
     Zone       = "1b"
   }
 }
-
+// need to create a module
 resource "aws_subnet" "subnet-1c" {
   provider                = aws.region-common
   cidr_block              = "10.0.32.0/20"
