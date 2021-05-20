@@ -31,7 +31,7 @@ resource "aws_subnet" "subnet-1a" {
     Owner      = "Aleksandr Andreichenko"
     Environmet = "Production"
     Region     = "eu-central-1"
-    Zone       = "1a"
+    Zone       = "zone-1a"
   }
 }
 
@@ -46,7 +46,7 @@ resource "aws_subnet" "subnet-1b" {
     Owner      = "Aleksandr Andreichenko"
     Environmet = "Production"
     Region     = "eu-central-1"
-    Zone       = "1b"
+    Zone       = "zone-1b"
   }
 }
 // need to create a module
