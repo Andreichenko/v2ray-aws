@@ -61,7 +61,7 @@ resource "aws_subnet" "subnet-1c" {
     Owner      = "Aleksandr Andreichenko"
     Environmet = "Production"
     Region     = "eu-central-1"
-    Zone       = "1c"
+    Zone       = "zone-1c"
   }
 }
 
