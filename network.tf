@@ -29,7 +29,7 @@ resource "aws_subnet" "subnet-1a" {
   tags = {
     Name       = "Common subnet primary"
     Owner      = "Aleksandr Andreichenko"
-    Environmet = "Production"
+    Environment = "Production"
     Region     = "eu-central-1"
     Zone       = "zone-1a"
   }
@@ -44,7 +44,7 @@ resource "aws_subnet" "subnet-1b" {
   tags = {
     Name       = "Common subnet primary"
     Owner      = "Aleksandr Andreichenko"
-    Environmet = "Production"
+    Environment = "Production"
     Region     = "eu-central-1"
     Zone       = "zone-1b"
   }
