@@ -33,6 +33,7 @@ resource "aws_instance" "v2ray-server" {
     Environment = "Production"
     Type       = "t2-micro"
     Region     = "eu-central-1"
+    Zone = "zone-1a"
   }
 }
 
