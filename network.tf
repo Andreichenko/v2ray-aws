@@ -27,11 +27,11 @@ resource "aws_subnet" "subnet-1a" {
   availability_zone       = element(data.aws_availability_zones.azs.names, 0)
   map_public_ip_on_launch = true
   tags = {
-    Name       = "Common subnet primary"
-    Owner      = "Aleksandr Andreichenko"
+    Name        = "Common subnet primary"
+    Owner       = "Aleksandr Andreichenko"
     Environment = "Production"
-    Region     = "eu-central-1"
-    Zone       = "zone-1a"
+    Region      = "eu-central-1"
+    Zone        = "zone-1a"
   }
 }
 
@@ -42,11 +42,11 @@ resource "aws_subnet" "subnet-1b" {
   availability_zone       = element(data.aws_availability_zones.azs.names, 1)
   map_public_ip_on_launch = true
   tags = {
-    Name       = "Common subnet primary"
-    Owner      = "Aleksandr Andreichenko"
+    Name        = "Common subnet primary"
+    Owner       = "Aleksandr Andreichenko"
     Environment = "Production"
-    Region     = "eu-central-1"
-    Zone       = "zone-1b"
+    Region      = "eu-central-1"
+    Zone        = "zone-1b"
   }
 }
 // need to create a module
@@ -57,11 +57,11 @@ resource "aws_subnet" "subnet-1c" {
   availability_zone       = element(data.aws_availability_zones.azs.names, 1)
   map_public_ip_on_launch = true
   tags = {
-    Name       = "Common subnet primary"
-    Owner      = "Aleksandr Andreichenko"
+    Name        = "Common subnet primary"
+    Owner       = "Aleksandr Andreichenko"
     Environment = "Production"
-    Region     = "eu-central-1"
-    Zone       = "zone-1c"
+    Region      = "eu-central-1"
+    Zone        = "zone-1c"
   }
 }
 
@@ -69,10 +69,10 @@ resource "aws_internet_gateway" "internet-gateway-vpc-central-1" {
   provider = aws.region-common
   vpc_id   = aws_vpc.vpc-central-1.id
   tags = {
-    Name       = "Common IGW"
-    Owner      = "Aleksandr Andreichenko"
+    Name        = "Common IGW"
+    Owner       = "Aleksandr Andreichenko"
     Environment = "Production"
-    Region     = "eu-central-1"
+    Region      = "eu-central-1"
   }
 }
 
