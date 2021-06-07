@@ -31,7 +31,7 @@ variable "vpc_name" {
 variable "vpc_cidr_block" {
   description = "The IPv4 CIDR block of the VPC"
   type        = string
-  default     = "10.0.1.0/16"
+  default     = "10.0.0.0/16"
 }
 
 variable "vpc_enable_dns_hostnames" {
