@@ -16,7 +16,7 @@ resource "aws_instance" "v2ray-server" {
   ami                         = data.aws_ssm_parameter.linuxAMI-eu-central-1.value
   instance_type               = var.instance_type
   key_name                    = aws_key_pair.common-key.key_name
-  associate_public_ip_address = true
+  associate_public_ip_address = false
   vpc_security_group_ids      = [aws_security_group.v2ray-sg.id]
   subnet_id                   = aws_subnet.subnet-1a.id
 
