@@ -23,7 +23,7 @@ variable "vpc_should_be_created" {
 }
 
 variable "vpc_name" {
-  description = "The Name of the VPC"
+  description = "The Name of the common VPC"
   type        = string
   default     = "v2ray common VPC"
 }
