@@ -35,7 +35,7 @@ variable "vpc_cidr_block" {
 }
 
 variable "vpc_enable_dns_hostnames" {
-  description = "Should instances in the VPC get public DNS hostnames?"
+  description = "Should instances in the common VPC get public DNS hostnames?"
   type        = bool
   default     = false
 }
