@@ -14,7 +14,7 @@ resource "aws_security_group" "v2ray-sg" {
   }
 
   egress {
-    description = "Allow all in"
+    description = "Allow all in traffic"
     from_port   = 0
     protocol    = "-1"
     to_port     = 0
