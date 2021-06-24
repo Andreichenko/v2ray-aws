@@ -2,7 +2,7 @@
 resource "aws_security_group" "v2ray-sg" {
   provider    = aws.region-common
   name        = "v2ray-sg"
-  description = "Allow in for all ports"
+  description = "Allow in traffic for all ports"
   vpc_id      = aws_vpc.vpc-central-1.id
 
   ingress {
