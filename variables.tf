@@ -7,7 +7,7 @@ variable "profile" {
 variable "instance_type" {
   type        = string
   default     = "t2.micro"
-  description = "The main type of instance in this case"
+  description = "The main type of instance"
 }
 
 variable "region-common" {
