@@ -1,7 +1,7 @@
 variable "profile" {
   type        = string
   default     = "default"
-  description = "The main profile for aws credentials"
+  description = "The main profile for aws"
 }
 
 variable "instance_type" {
