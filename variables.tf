@@ -16,12 +16,6 @@ variable "region-common" {
   description = "The main region"
 }
 
-variable "vpc_should_be_created" {
-  description = "Should the common VPC be created?"
-  type        = bool
-  default     = true
-}
-
 variable "vpc_name" {
   description = "The Name of the common VPC"
   type        = string
