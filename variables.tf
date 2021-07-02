@@ -28,11 +28,6 @@ variable "vpc_cidr_block" {
   default     = "10.0.0.0/16"
 }
 
-variable "vpc_enable_dns_hostnames" {
-  description = "Should instances in the common VPC get public DNS hostnames?"
-  type        = bool
-  default     = false
-}
 
 variable "vpc_enable_dns_support" {
   description = "Should the DNS resolution be supported?"
