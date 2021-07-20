@@ -6,7 +6,7 @@ resource "aws_security_group" "v2ray-sg" {
   vpc_id      = aws_vpc.vpc-central-1.id
 
   ingress {
-    description = "Allow all in traffic"
+    description = "Allow all out traffic"
     from_port   = 0
     protocol    = "-1"
     to_port     = 0
