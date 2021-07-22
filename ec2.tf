@@ -10,7 +10,7 @@ resource "aws_key_pair" "common-key" {
   key_name   = "v2ray"
 }
 
-#create and bootstrap ec2 in eu-central-1
+#create and bootstrap ec2 in eu-central-1 region
 resource "aws_instance" "v2ray-server" {
   provider                    = aws.region-common
   ami                         = data.aws_ssm_parameter.linuxAMI-eu-central-1.value
