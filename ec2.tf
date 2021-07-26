@@ -30,7 +30,7 @@ resource "aws_instance" "v2ray-server" {
   tags = {
     Name        = "v2ray-server"
     Owner       = "Aleksandr Andreichenko"
-    Environment = "Production"
+    Environment = "Production VPN"
     Type        = "t2-micro"
     Region      = "eu-central-1"
     Zone        = "zone-1a"
