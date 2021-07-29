@@ -1,4 +1,4 @@
-# Creating VPC for eu-central-1
+# Creating VPC for eu-central-1 region
 resource "aws_vpc" "vpc-central-1" {
   provider             = aws.region-common
   cidr_block           = "10.0.0.0/16"
