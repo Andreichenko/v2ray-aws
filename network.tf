@@ -7,7 +7,7 @@ resource "aws_vpc" "vpc-central-1" {
   tags = {
     Name        = "common-vpc-v2ray"
     Owner       = "Aleksandr Andreichenko"
-    Environment = "Production"
+    Environment = "Production Environment"
     Region      = "eu-central-1"
   }
 }
