@@ -44,7 +44,7 @@ resource "aws_subnet" "subnet-1b" {
   tags = {
     Name        = "Common subnet primary"
     Owner       = "Aleksandr Andreichenko"
-    Environment = "Production"
+    Environment = "Production Environment"
     Region      = "eu-central-1"
     Zone        = "zone-1b"
   }
