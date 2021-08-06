@@ -71,7 +71,7 @@ resource "aws_internet_gateway" "internet-gateway-vpc-central-1" {
   tags = {
     Name        = "Common IGW"
     Owner       = "Aleksandr Andreichenko"
-    Environment = "Production"
+    Environment = "Production Environment"
     Region      = "eu-central-1"
   }
 }
