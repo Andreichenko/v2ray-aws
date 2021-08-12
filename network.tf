@@ -42,7 +42,7 @@ resource "aws_subnet" "subnet-1b" {
   availability_zone       = element(data.aws_availability_zones.azs.names, 1)
   map_public_ip_on_launch = true
   tags = {
-    Name        = "Common subnet"
+    Name        = "The primary subnet"
     Owner       = "Aleksandr Andreichenko"
     Environment = "Production Environment"
     Region      = "eu-central-1"
@@ -57,7 +57,7 @@ resource "aws_subnet" "subnet-1c" {
   availability_zone       = element(data.aws_availability_zones.azs.names, 1)
   map_public_ip_on_launch = true
   tags = {
-    Name        = "the primary subnet"
+    Name        = "The primary subnet"
     Owner       = "Aleksandr Andreichenko"
     Environment = "Production Environment"
     Region      = "eu-central-1"
