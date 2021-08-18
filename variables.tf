@@ -17,7 +17,7 @@ variable "region-common" {
 }
 
 variable "vpc_name" {
-  description = "The Name of the common VPC"
+  description = "The name of the common VPC"
   type        = string
   default     = "The common VPC"
 }
