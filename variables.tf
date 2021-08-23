@@ -1,7 +1,7 @@
 variable "profile" {
   type        = string
   default     = "default"
-  description = "The common profile for aws"
+  description = "The common profile for awscli"
 }
 
 variable "instance_type" {
