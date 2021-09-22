@@ -22,7 +22,7 @@ data "aws_availability_zones" "azs" {
 #Create subnet for common VPC 10.0.0.0/16
 resource "aws_subnet" "subnet-1a" {
   provider                = aws.region-common
-  cidr_block              = "10.0.0.0/20"
+  cidr_block              = "10.0.1.0/20"
   vpc_id                  = aws_vpc.vpc-central-1.id
   availability_zone       = element(data.aws_availability_zones.azs.names, 0)
   map_public_ip_on_launch = true
