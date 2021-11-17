@@ -37,4 +37,3 @@ resource "aws_instance" "v2ray-server" {
     Zone        = "zone-1a"
   }
 }
-
