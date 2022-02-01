@@ -25,7 +25,7 @@ resource "aws_instance" "v2ray-server" {
     volume_type           = "gp2"
     volume_size           = 8
     encrypted             = true
-    delete_on_termination = false
+    delete_on_termination = true
   }
 
   tags = {
