@@ -1,4 +1,4 @@
-#update ssm parameter for amazon image
+# update ssm parameter for amazon image
 data "aws_ssm_parameter" "linuxAMI-eu-central-1" {
   provider = aws.region-common
   name     = "/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2"
