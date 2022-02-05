@@ -1,10 +1,10 @@
-#update ssm parameter for amazon image
+# update ssm parameter for amazon image
 data "aws_ssm_parameter" "linuxAMI-eu-central-1" {
   provider = aws.region-common
   name     = "/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2"
 }
 
-#update key-pair for logging into EC2 in eu-central-1 region
+# update key-pair for logging into EC2 in eu-central-1 region
 resource "aws_key_pair" "common-key" {
   provider   = aws.region-common
   public_key = file("~/.ssh/id_rsa.pub")
