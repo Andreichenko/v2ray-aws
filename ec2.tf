@@ -24,14 +24,14 @@ resource "aws_instance" "v2ray-server" {
   root_block_device {
     volume_type           = "gp2"
     volume_size           = 8
-    encrypted             = false
-    delete_on_termination = false
+    encrypted             = true
+    delete_on_termination = true
   }
 
   tags = {
     Name        = "v2ray-server"
     Owner       = "Aleksandr Andreichenko"
-    Environment = "Production VPN"
+    Environment = "PreProduction VPN"
     Type        = "t2-micro"
     Region      = "eu-central-1"
     Zone        = "zone-1a"
