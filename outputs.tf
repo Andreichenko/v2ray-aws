@@ -15,7 +15,7 @@ output "aws_subnet_3" {
 
 output "vpc_common" {
   value       = aws_vpc.vpc-central-1.cidr_block
-  description = "CIDR"
+  description = "CIDR for second subnet"
 }
 
 output "v2ray-server-public-ip" {
