@@ -5,7 +5,7 @@ output "aws_subnet_1" {
 
 output "aws_subnet_2" {
   value       = aws_subnet.subnet-1b.id
-  description = "Subnet id"
+  description = "Subnet id second subnet for vault"
 }
 
 output "aws_subnet_3" {
