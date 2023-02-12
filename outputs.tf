@@ -20,7 +20,7 @@ output "vpc_common" {
 
 output "v2ray-server-public-ip" {
   value       = aws_instance.v2ray-server.public_ip
-  description = "public IP"
+  description = "public IP v2ray server"
 }
 
 output "route-table" {
