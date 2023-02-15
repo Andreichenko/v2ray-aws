@@ -10,7 +10,7 @@ output "aws_subnet_2" {
 
 output "aws_subnet_3" {
   value       = aws_subnet.subnet-1c.id
-  description = "Subnet id for v2ray instance"
+  description = "Subnet id for v2ray instance in eu-central-1"
 }
 
 output "vpc_common" {
