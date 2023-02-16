@@ -19,7 +19,7 @@ variable "region-common" {
 variable "vpc_name" {
   description = "The name of the common VPC"
   type        = string
-  default     = "The common VPC"
+  default     = "The common VPC v2ray instance"
 }
 
 variable "vpc_cidr_block" {
