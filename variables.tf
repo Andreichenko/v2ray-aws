@@ -23,7 +23,7 @@ variable "vpc_name" {
 }
 
 variable "vpc_cidr_block" {
-  description = "The IPv4 CIDR block of the common VPC"
+  description = "The IPv4 CIDR block of the common VPC eu-central-1"
   type        = string
   default     = "10.0.0.0/16"
 }
