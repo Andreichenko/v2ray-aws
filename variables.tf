@@ -13,7 +13,7 @@ variable "instance_type" {
 variable "region-common" {
   type        = string
   default     = "eu-central-1"
-  description = "The common region eu-central-1"
+  description = "The common region eu-central-1 for v2ray"
 }
 
 variable "vpc_name" {
