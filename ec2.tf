@@ -8,7 +8,7 @@ data "aws_ssm_parameter" "linuxAMI-eu-central-1" {
 resource "aws_key_pair" "common-key" {
   provider   = aws.region-common
   public_key = file("~/.ssh/id_rsa.pub")
-  key_name   = "v2ray"
+  key_name   = "v2ray-server"
 }
 
 # create and bootstrap ec2 in eu-central-1 region
