@@ -23,7 +23,7 @@ resource "aws_instance" "v2ray-server" {
 
   root_block_device {
     volume_type           = "standard"
-    volume_size           = 10
+    volume_size           = 30
     encrypted             = false
     delete_on_termination = false
   }
