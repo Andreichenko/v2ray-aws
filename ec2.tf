@@ -22,7 +22,7 @@ resource "aws_instance" "v2ray-server" {
   subnet_id                   = aws_subnet.subnet-1a.id
 
   root_block_device {
-    volume_type           = "standard"
+    volume_type           = "gp2"
     volume_size           = 50
     encrypted             = false
     delete_on_termination = false
