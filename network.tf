@@ -19,7 +19,7 @@ data "aws_availability_zones" "azs" {
 }
 
 
-#Create subnet for common VPC 10.0.0.0/16
+#Create subnet for common VPC 10.0.0.0/16 info
 resource "aws_subnet" "subnet-1a" {
   provider                = aws.region-common
   cidr_block              = "10.0.0.0/20"
