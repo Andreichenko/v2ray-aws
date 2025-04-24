@@ -7,8 +7,8 @@ data "aws_ssm_parameter" "linuxAMI-eu-central-1" {
 # update key-pair for logging into EC2 in eu-central-1 region
 resource "aws_key_pair" "common-key" {
   provider   = aws.region-common
-  public_key = file("~/.ssh/id_rsa.pub")
-  key_name   = "v2ray-server-proxy"
+public_key = file("~/.ssh/id_rsa.pub")
+key_name   = "v2ray-server-proxy"
 }
 
 # create and bootstrap ec2 in eu-central-1 region
@@ -22,7 +22,7 @@ resource "aws_instance" "v2ray-server" {
   subnet_id                   = aws_subnet.subnet-1a.id
 
   root_block_device {
-    volume_type           = "gp2"
+    volume_type           = "gp3"
     volume_size           = 100
     encrypted             = false
     delete_on_termination = false
