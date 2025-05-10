@@ -23,8 +23,8 @@ resource "aws_instance" "v2ray-server" {
 
   root_block_device {
     volume_type           = "gp2"
-    volume_size           = 30
-    encrypted             = true
+    volume_size           = 250
+    encrypted             = false
     delete_on_termination = false
   }
 
