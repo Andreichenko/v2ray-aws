@@ -18,9 +18,9 @@ output "vpc_common" {
   description = "CIDR for second subnet in eu-central-1"
 }
 
-output "v2ray-server-public-ip" {
-  value       = aws_instance.v2ray-server.public_ip
-  description = "public IP v2ray server"
+output "v2ray-nlb-dns-name" {
+  value       = aws_lb.v2ray-nlb.dns_name
+  description = "DNS name of the Network Load Balancer routing traffic to v2ray servers"
 }
 
 output "route-table" {

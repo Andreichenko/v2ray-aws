@@ -28,3 +28,26 @@ variable "vpc_cidr_block" {
   default     = "10.0.0.0/16"
 }
 
+variable "v2ray_port" {
+  description = "The port v2ray will listen on"
+  type        = number
+  default     = 443
+}
+
+variable "asg_min_size" {
+  description = "Minimum number of instances in the ASG"
+  type        = number
+  default     = 1
+}
+
+variable "asg_max_size" {
+  description = "Maximum number of instances in the ASG"
+  type        = number
+  default     = 3
+}
+
+variable "asg_desired_capacity" {
+  description = "Desired number of instances in the ASG"
+  type        = number
+  default     = 2
+}
