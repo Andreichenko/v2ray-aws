@@ -18,9 +18,9 @@ output "vpc_common" {
   description = "CIDR for second subnet in eu-central-1"
 }
 
-output "v2ray-nlb-dns-name" {
-  value       = aws_lb.v2ray-nlb.dns_name
-  description = "DNS name of the Network Load Balancer routing traffic to v2ray servers"
+output "xray-nlb-dns-name" {
+  value       = aws_lb.xray-nlb.dns_name
+  description = "DNS name of the Network Load Balancer routing traffic to Xray servers"
 }
 
 output "route-table" {

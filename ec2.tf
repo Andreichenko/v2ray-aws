@@ -8,64 +8,64 @@ data "aws_ssm_parameter" "linuxAMI-eu-central-1" {
 resource "aws_key_pair" "common-key" {
   provider   = aws.region-common
   public_key = file("~/.ssh/id_rsa.pub")
-  key_name   = "v2ray-server-proxy"
+  key_name   = "xray-server-proxy"
 }
 
 # Network Load Balancer (NLB) for high-performance TCP proxy traffic
-resource "aws_lb" "v2ray-nlb" {
+resource "aws_lb" "xray-nlb" {
   provider           = aws.region-common
-  name               = "v2ray-nlb"
+  name               = "xray-nlb"
   internal           = false
   load_balancer_type = "network"
   subnets            = [aws_subnet.subnet-1a.id, aws_subnet.subnet-1b.id, aws_subnet.subnet-1c.id]
 
   tags = {
-    Name        = "v2ray-nlb"
+    Name        = "xray-nlb"
     Owner       = "Aleksandr Andreichenko"
     Environment = "Production"
   }
 }
 
 # Target Group for NLB
-resource "aws_lb_target_group" "v2ray-tg" {
+resource "aws_lb_target_group" "xray-tg" {
   provider    = aws.region-common
-  name        = "v2ray-target-group"
-  port        = var.v2ray_port
+  name        = "xray-target-group"
+  port        = var.xray_port
   protocol    = "TCP"
   vpc_id      = aws_vpc.vpc-central-1.id
   target_type = "instance"
 
   health_check {
-    port     = var.v2ray_port
+    port     = var.xray_port
     protocol = "TCP"
     interval = 30
   }
 }
 
 # Listener for NLB routing traffic to the Target Group
-resource "aws_lb_listener" "v2ray-listener" {
+resource "aws_lb_listener" "xray-listener" {
   provider          = aws.region-common
-  load_balancer_arn = aws_lb.v2ray-nlb.arn
-  port              = var.v2ray_port
+  load_balancer_arn = aws_lb.xray-nlb.arn
+  port              = var.xray_port
   protocol          = "TCP"
 
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.v2ray-tg.arn
+    target_group_arn = aws_lb_target_group.xray-tg.arn
   }
 }
 
 # Launch Template for Auto Scaling Group
-resource "aws_launch_template" "v2ray-template" {
+resource "aws_launch_template" "xray-template" {
   provider      = aws.region-common
-  name_prefix   = "v2ray-template-"
+  name_prefix   = "xray-template-"
   image_id      = data.aws_ssm_parameter.linuxAMI-eu-central-1.value
   instance_type = var.instance_type
   key_name      = aws_key_pair.common-key.key_name
 
   network_interfaces {
     associate_public_ip_address = true
-    security_groups             = [aws_security_group.v2ray-sg.id]
+    security_groups             = [aws_security_group.xray-sg.id]
   }
 
   # 20 GB gp3 storage is optimized for size and cost, auto-deletes on termination
@@ -79,22 +79,22 @@ resource "aws_launch_template" "v2ray-template" {
     }
   }
 
-  # Automated bootstrapping of v2ray service
+  # Automated bootstrapping of xray service
   user_data = base64encode(<<-EOF
               #!/bin/bash
               yum update -y
               yum install -y curl
-              # Install v2ray via official script
-              bash <(curl -L https://raw.githubusercontent.com/v2fly/fscript/master/fscript.sh)
-              systemctl enable v2ray
-              systemctl start v2ray
+              # Install Xray via official release script
+              bash <(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)
+              systemctl enable xray
+              systemctl start xray
               EOF
   )
 
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name        = "v2ray-asg-node"
+      Name        = "xray-asg-node"
       Owner       = "Aleksandr Andreichenko"
       Environment = "Production VPN"
     }
@@ -102,18 +102,18 @@ resource "aws_launch_template" "v2ray-template" {
 }
 
 # Auto Scaling Group spanning 3 Availability Zones
-resource "aws_autoscaling_group" "v2ray-asg" {
+resource "aws_autoscaling_group" "xray-asg" {
   provider            = aws.region-common
-  name_prefix         = "v2ray-asg-"
+  name_prefix         = "xray-asg-"
   vpc_zone_identifier = [aws_subnet.subnet-1a.id, aws_subnet.subnet-1b.id, aws_subnet.subnet-1c.id]
-  target_group_arns   = [aws_lb_target_group.v2ray-tg.arn]
+  target_group_arns   = [aws_lb_target_group.xray-tg.arn]
 
   min_size         = var.asg_min_size
   max_size         = var.asg_max_size
   desired_capacity = var.asg_desired_capacity
 
   launch_template {
-    id      = aws_launch_template.v2ray-template.id
+    id      = aws_launch_template.xray-template.id
     version = "$Latest"
   }
 
@@ -127,11 +127,11 @@ resource "aws_autoscaling_group" "v2ray-asg" {
 }
 
 # Auto Scaling Policy based on average CPU utilization
-resource "aws_autoscaling_policy" "v2ray-cpu-policy" {
+resource "aws_autoscaling_policy" "xray-cpu-policy" {
   provider               = aws.region-common
-  name                   = "v2ray-cpu-scaling-policy"
+  name                   = "xray-cpu-scaling-policy"
   policy_type            = "TargetTrackingScaling"
-  autoscaling_group_name = aws_autoscaling_group.v2ray-asg.name
+  autoscaling_group_name = aws_autoscaling_group.xray-asg.name
 
   target_tracking_configuration {
     predefined_metric_specification {

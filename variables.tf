@@ -13,13 +13,13 @@ variable "instance_type" {
 variable "region-common" {
   type        = string
   default     = "eu-central-1"
-  description = "The common region eu-central-1 for v2ray"
+  description = "The common region eu-central-1 for xray"
 }
 
 variable "vpc_name" {
-  description = "The name of the common VPC in eu-central-1 v2ray vpc"
+  description = "The name of the common VPC in eu-central-1 xray vpc"
   type        = string
-  default     = "The common VPC v2ray instance"
+  default     = "The common VPC xray instance"
 }
 
 variable "vpc_cidr_block" {
@@ -28,8 +28,8 @@ variable "vpc_cidr_block" {
   default     = "10.0.0.0/16"
 }
 
-variable "v2ray_port" {
-  description = "The port v2ray will listen on"
+variable "xray_port" {
+  description = "The port Xray will listen on"
   type        = number
   default     = 443
 }

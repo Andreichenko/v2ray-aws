@@ -1,7 +1,7 @@
-#Create SG for allowing TCP/8080 from all and tcp/22 from some ip in eu-central-1
-resource "aws_security_group" "v2ray-sg" {
+#Create SG for allowing traffic on Xray ports in eu-central-1
+resource "aws_security_group" "xray-sg" {
   provider    = aws.region-common
-  name        = "v2ray-sg"
+  name        = "xray-sg"
   description = "Allow in traffic for all ports"
   vpc_id      = aws_vpc.vpc-central-1.id
 
