@@ -3,4 +3,8 @@ provider "aws" {
   region  = var.region-common
   alias   = "region-common"
 }
+
+provider "azurerm" {
+  features {}
+}
 // need to add modules after redeploy
